@@ -1,8 +1,8 @@
 import { useContext } from 'react';
 import { DataContext } from '../App';
 import Header from '../components/Header/Header';
-import { Link } from 'react-router-dom'
-import FriendBlock from '../components/UI/FriendBlock/FriendBlock';
+import { Link } from 'react-router-dom';
+import InviteBlock from '../components/UI/InviteBlock/InviteBlock';
 
 function NetflixPlan() {
     const data = useContext(DataContext);
@@ -82,7 +82,7 @@ function NetflixPlan() {
                         )
                     })}
                 </div>
-                <FriendBlock/>
+                <InviteBlock />
             </main>
         </>
     );
