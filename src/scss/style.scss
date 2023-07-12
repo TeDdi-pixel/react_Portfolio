@@ -1,0 +1,12 @@
+@import './_nullstyle';
+@import './_fonts';
+@import './_mixins';
+@import './header.scss';
+@import './NetflixPlan.scss';
+
+#container{
+    background-color: rgb(255, 200, 128);
+    width: 100%;
+    height: auto;
+    padding: 0 120px;
+}

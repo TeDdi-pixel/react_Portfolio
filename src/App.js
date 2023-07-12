@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import './scss/style.scss'
+import {data} from './fakeData';
+import NetflixPlan from './pages/NetflixPlan';
+import { BrowserRouter } from 'react-router-dom';
+import { createContext, useContext, useState } from 'react';
+const DataContext = createContext();
 
 function App() {
+  const [newData, setNewData] = useState(data);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter className="App">
+      <DataContext.Provider value={newData}>
+      <NetflixPlan />
+      </DataContext.Provider>
+    </BrowserRouter>
   );
 }
-
+export { DataContext };
 export default App;
