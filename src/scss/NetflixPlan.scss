@@ -19,14 +19,14 @@ body {
         text-align: center;
         font-family: $font-family2;
         font-weight: 700;
-        font-size: 36px;
+        @include adaptive-font(36,28);
     }
 
     &__description {
         margin-top: 20px;
         font-family: $font-family;
         text-align: center;
-        font-size: 18px;
+        @include adaptive-font(18,17);
     }
 
     &__period {
@@ -42,12 +42,14 @@ body {
         justify-content: center;
         width: 100%;
         display: flex;
-        padding: 17px 48px;
+        // padding: 17px 48px;
         border-radius: 12px 0px 0px 12px;
         background-color: #1749B3;
         font-family: $font-family;
-        font-size: 18px;
+        @include adaptive-font(18,17);
         color: white;
+        padding-top: 17px;
+        padding-bottom: 17px;
     }
 
     &-period__right {
@@ -56,10 +58,12 @@ body {
         width: 100%;
         border: 1px solid #1749B3;
         font-family: $font-family;
-        font-size: 18px;
+        @include adaptive-font(18,17);
         color: #030303;
         border-radius: 0px 12px 12px 0px;
-        padding: 17px 45px;
+        // padding: 17px 45px;
+        padding-top: 17px;
+        padding-bottom: 17px;
     }
 
 
@@ -191,15 +195,7 @@ body {
     @media screen and (max-width: 767px) {
         padding: 0 32px;
         padding-bottom: 11px;
-        .title{
-            font-size: 22px;
-        }
-        .title2{
-            font-size: 22px;
-        }
-        .description2{
-            font-size: 18px;
-        }
+
     }
 
     @media screen and (max-width: 374px) {
@@ -207,15 +203,8 @@ body {
         padding-bottom: 11px;
 
         &__period {
-            width: auto;
+            width: 100%;
         }
 
-        &-period__left {
-            padding: 17px 33px;
-        }
-
-        &-period__right {
-            padding: 17px 35px;
-        }
     }
 }

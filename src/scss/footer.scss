@@ -1,0 +1,125 @@
+@import './fonts';
+@import './variable';
+
+.footer {
+    margin-top: 120px;
+    width: 100%;
+    background-color: #1749B3;
+    padding: 0 120px;
+
+    &__wrapper {
+        max-width: 1440px;
+        width: 100%;
+        margin: 0 auto;
+        padding-top: 40px;
+        padding-bottom: 12px;
+    }
+    &__links{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        li{
+            &:last-child {
+                width: 179px;
+                color: white;
+                font-family: $font-family;
+                font-size: 16px;
+            }
+        }
+        
+    }
+
+    &__logo {
+        display: flex;
+        align-items: center;
+        margin-bottom: 24px;
+
+        
+
+        a {
+            color: white;
+            margin-left: 12px;
+            font-family: $font-family;
+            font-size: 16px;
+        }
+    }
+
+    &__subscriptions {}
+
+    &-subscription__link {
+        &:first-child {
+            font-size: 18px;
+            font-family: $font-family;
+            margin-bottom: 20px;
+        }
+
+        a {
+            color: white;
+        }
+
+        margin-bottom: 12px;
+        font-size: 16px;
+
+    }
+
+    &__nav {}
+
+    &-nav__link {
+        &:first-child {
+            font-size: 18px;
+            font-family: $font-family;
+            margin-bottom: 20px;
+        }
+
+        a {
+            color: white;
+        }
+
+        margin-bottom: 12px;
+        font-size: 16px;
+
+    }
+
+    &-messengers-languages {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    &__messengers {
+        display: flex;
+        li:last-child{
+            margin-left: 16px;
+        }
+    }
+    &__languages{
+        margin-top: 17px;
+    }
+    &__language{
+        font-size: 17px;
+        color: white;
+        display: flex;
+        align-items: center;
+        img{
+            margin-left: 3px;
+        }
+    }
+    &__rights-policy{
+        margin-top: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        li{
+            font-size: 16px;
+            opacity: 0.5;
+            color: #D3D3D3;
+            font-family: $font-family;
+        }
+    }
+}

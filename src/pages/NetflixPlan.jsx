@@ -3,6 +3,7 @@ import { DataContext } from '../App';
 import Header from '../components/Header/Header';
 import { Link } from 'react-router-dom';
 import InviteBlock from '../components/UI/InviteBlock/InviteBlock';
+import Footer from '../components/Footer/Footer';
 
 function NetflixPlan() {
     const data = useContext(DataContext);
@@ -11,6 +12,7 @@ function NetflixPlan() {
     return (
         <>
             <Header />
+            
             <main className='main'>
                 <h1 className='main__title'>Choose a Netflix Plan</h1>
                 <p className='main__description'>Listen without limits at a bargain price</p>
@@ -84,6 +86,8 @@ function NetflixPlan() {
                 </div>
                 <InviteBlock />
             </main>
+
+            <Footer/>
         </>
     );
 }

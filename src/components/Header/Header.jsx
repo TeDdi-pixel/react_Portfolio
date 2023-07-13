@@ -197,7 +197,7 @@ function Header() {
                     <nav className='header-menu__nav header-menu__nav_second'>
                         <ul className='header-menu__subs'>
                             <li className='header-menu__sub'>
-                                <Link to='/asdsdasdsa'
+                                <Link to='/'
                                     onClick={handleBurgerClick}
                                 >
                                     Netflix
@@ -242,7 +242,7 @@ function Header() {
                                 </Link>
                             </li>
                             <li className='header-menu__messenger'>
-                                <Link to='/'
+                                <Link to='/' 
                                     onClick={handleBurgerClick}
                                 >
                                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
