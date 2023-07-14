@@ -9,19 +9,6 @@ function Header() {
     const dropdownRef = useRef();
     const languageRef = useRef();
 
-    // const handleOutsideClick = (event) => {
-    //     if (!dropdownRef.current || !languageRef.current) {
-    //       return;
-    //     }
-      
-    //     const dropdowns = [dropdownRef.current, languageRef.current];
-    //     for (const dropdown of dropdowns) {
-    //       if (!dropdown.contains(event.target)) {
-    //         dropdown.classList.remove('header__dropdown_active');
-    //       }
-    //     }
-    //   };
-    // document.addEventListener('click', handleOutsideClick);
 
     useEffect(() => {
         if (active) {
@@ -51,7 +38,6 @@ function Header() {
     document.addEventListener('click',handleDropdownOut)
 
     const disableScroll = () => {
-        // Сохраняем текущую позицию прокрутки
         const scrollPosition = window.scroll || document.documentElement.scrollTop;
         document.body.style.overflow = 'hidden';
         document.body.style.position = 'fixed';
@@ -59,19 +45,12 @@ function Header() {
     };
 
     const enableScroll = () => {
-        // Получаем сохраненную позицию прокрутки
         const scrollPosition = parseInt(document.body.style.top, 10) || 0;
         document.body.style.overflow = '';
         document.body.style.position = '';
         document.body.style.top = '';
         window.scrollTo(0, -scrollPosition);
     };
-
-    
-      
-    //   document.addEventListener('click', handleOutsideClick);
-
-
     return (
         <>
             <header className={active ? 'header header_active' : 'header'}
