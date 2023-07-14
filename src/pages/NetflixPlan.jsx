@@ -70,7 +70,6 @@ function NetflixPlan() {
             </div>
         )
     })
-
     const [activeLeft, setActiveLeft] = useState(true);
     const [activeRight, setActiveRight] = useState(false);
 
