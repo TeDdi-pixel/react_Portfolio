@@ -35,7 +35,8 @@ body {
         display: flex;
         margin: 0 auto;
         margin-top: 52px;
-
+        border-radius: 12px;
+        border: 1px solid #1749B3;
     }
 
     &-period__left {
@@ -43,27 +44,43 @@ body {
         width: 100%;
         display: flex;
         // padding: 17px 48px;
-        border-radius: 12px 0px 0px 12px;
-        background-color: #1749B3;
-        font-family: $font-family;
-        @include adaptive-font(18,17);
-        color: white;
-        padding-top: 17px;
-        padding-bottom: 17px;
-    }
-
-    &-period__right {
-        display: flex;
-        justify-content: center;
-        width: 100%;
-        border: 1px solid #1749B3;
+        border-radius: 10px 0px 0px 10px;
         font-family: $font-family;
         @include adaptive-font(18,17);
         color: #030303;
-        border-radius: 0px 12px 12px 0px;
+        padding-top: 17px;
+        padding-bottom: 17px;
+        background: linear-gradient(to right, transparent 50%, #1749B3 50%);
+        background-size: 200% 100%;
+        background-position: left;
+        transition: all 0.1500s ease;
+        cursor: pointer;
+
+    }
+    .period-btn-left_active{
+        background-position: right;
+        color: white;
+    }
+    .period-btn-right_active{
+        background-position: left;
+        color: white;
+    }
+    &-period__right {
+        cursor: pointer;
+        background: linear-gradient(to left, transparent 50%, #1749B3 50%);
+        background-size: 200% 100%;
+        background-position: right;
+        transition: all 0.1500s ease;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        font-family: $font-family;
+        @include adaptive-font(18,17);
+        color: #030303;
         // padding: 17px 45px;
         padding-top: 17px;
         padding-bottom: 17px;
+        
     }
 
 
@@ -179,6 +196,14 @@ body {
     @media screen and (max-width: 1024px) {
         &__period {
             margin-top: 40px;
+        }
+        &-period__left{
+            cursor: auto;
+
+        }
+        &-period__right{
+            cursor: auto ;
+
         }
 
         &__plans {

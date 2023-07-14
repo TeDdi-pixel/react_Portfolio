@@ -79,7 +79,7 @@ function Footer() {
 
                         </div>
                     </div>
-
+                    <span className="footer__line-through"></span>
                     <div className="footer-rights__container">
                         <ul className="footer__rights-policy">
                             <li className="footer-rights-policy__text">Privacy Policy</li>
