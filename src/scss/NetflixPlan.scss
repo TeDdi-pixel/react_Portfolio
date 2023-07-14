@@ -17,7 +17,7 @@ body {
     // justify-content: center;
     &__title {
         transition: all 0.3s ease;
-        margin-top: 134px;
+        margin-top: 80px;
         text-align: center;
         font-family: $font-family2;
         font-weight: 700;
@@ -202,7 +202,7 @@ body {
 
     @media screen and (max-width: 1024px) {
         &__title{
-            margin-top: 106px;
+            margin-top: 52px;
         }
         &__period {
             margin-top: 40px;
@@ -238,7 +238,7 @@ body {
         
         padding-bottom: 11px;
         &__title{
-            margin-top: 102px;
+            margin-top: 48px;
         }
         &__period {
             width: 100%;
