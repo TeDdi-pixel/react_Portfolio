@@ -1,8 +1,28 @@
 import { Link } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 function Header() {
     const [active, setActive] = useState(false);
+    const [subscriptionsActive, setSubscriptionsActive] = useState(false);
+    const [languageActive, setLanguageActive] = useState(false);
+
+    const dropdownRef = useRef();
+    const languageRef = useRef();
+
+    // const handleOutsideClick = (event) => {
+    //     if (!dropdownRef.current || !languageRef.current) {
+    //       return;
+    //     }
+      
+    //     const dropdowns = [dropdownRef.current, languageRef.current];
+    //     for (const dropdown of dropdowns) {
+    //       if (!dropdown.contains(event.target)) {
+    //         dropdown.classList.remove('header__dropdown_active');
+    //       }
+    //     }
+    //   };
+    // document.addEventListener('click', handleOutsideClick);
+
     useEffect(() => {
         if (active) {
             disableScroll();
@@ -10,11 +30,25 @@ function Header() {
             enableScroll();
         }
     }, [active]);
+    
     const handleBurgerClick = () => {
         setActive((prev) => !prev);
     };
 
+    const handleDropdownClick = () => {
+        setSubscriptionsActive((prev) => !prev);
+    }
+    const handleLanguageClick = () => {
+        setLanguageActive((prev) => !prev);
+    }
 
+    const handleDropdownOut = (event) => {
+        if(event.target.className){
+            setLanguageActive(false);
+            setSubscriptionsActive(false);
+        }
+    }
+    document.addEventListener('click',handleDropdownOut)
 
     const disableScroll = () => {
         // Сохраняем текущую позицию прокрутки
@@ -32,10 +66,15 @@ function Header() {
         document.body.style.top = '';
         window.scrollTo(0, -scrollPosition);
     };
+
+    
+      
+    //   document.addEventListener('click', handleOutsideClick);
+
+
     return (
         <>
             <header className={active ? 'header header_active' : 'header'}
-
             >
                 <div className="header__wrapper">
                     <ul className="header__logo-block">
@@ -44,10 +83,20 @@ function Header() {
                     </ul>
                     <nav className="header__nav">
                         <ul className="header__links">
-                            <li className="header__link">
-                                <Link to="/">
+                            <li className="header__link"
+                                onClick={handleDropdownClick}
+                            >
+                                <Link to="/"
+                                ref={dropdownRef}
+                                >
                                     Subscriptions
-                                    <img src="./img/arrow-down-s-line (2) 2.svg" alt="" />
+                                    <img src="./img/arrow-down-s-line (2) 2.svg" alt="" className={subscriptionsActive ? 'header__arrow header__arrow_active': 'header__arrow'}/>
+                                    <ul className={subscriptionsActive ? 'header__dropdown header__dropdown_active': 'header__dropdown'}
+                                    >
+                                            <li className='header-dropdown__link'><Link>Netflix</Link></li>
+                                            <li className='header-dropdown__link'><Link>YouTube Premium</Link></li>
+                                            <li className='header-dropdown__link'><Link>Spotify</Link></li>
+                                    </ul>
                                 </Link>
                             </li>
                             <li className="header__link">
@@ -100,14 +149,23 @@ function Header() {
                         </ul>
                         <ul className='header__languages'>
                             <li className='header__language'>
-                                <Link to="/">
+                                <Link to="/"
+                                onClick={handleLanguageClick}
+                                >
                                     EN
-                                    <img src="./img/arrow-down-s-line (2) 2.svg" alt="" />
+                                    <img src="./img/arrow-down-s-line (2) 2.svg" alt="" className={languageActive ? 'header__arrow header__arrow_active': 'header__arrow'}/>
+                                    <ul className={languageActive ? 'header__dropdown-lang header__dropdown-lang_active': 'header__dropdown-lang'}
+                                    ref={languageRef}
+                                    >
+                                            <li className='header-dropdown__link'><Link to='/'>English</Link></li>
+                                            <li className='header-dropdown__link'><Link to='/'>Ukraine</Link></li>
+                                            <li className='header-dropdown__link'><Link to='/'>Russian</Link></li>
+                                    </ul>
                                 </Link>
                             </li>
                         </ul>
                         <div className='header__support'>
-                        <Link to="/" className='support-btn'>Support</Link>
+                        <Link to="/" className='header__support-btn'>Support</Link>
 
                         </div>
                     </div>

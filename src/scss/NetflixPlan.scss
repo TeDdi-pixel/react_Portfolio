@@ -4,17 +4,19 @@
 body {
     background-color: #ECF3FB;
     overflow-x: hidden;
+    // position: inherit;
 }
+
 
 .main {
     max-width: 1440px;
     padding: 0 120px;
     margin: 58px auto 0 auto;
-
-    // display: flex;
+    
     // flex-direction: column;
     // justify-content: center;
     &__title {
+        transition: all 0.3s ease;
         margin-top: 80px;
         text-align: center;
         font-family: $font-family2;
@@ -93,7 +95,7 @@ body {
         margin-top: 48px;
         display: flex;
         flex-direction: row;
-        // flex-wrap: wrap;
+        flex-wrap: wrap;
         gap: 16px;
         justify-content: center;
     }
@@ -199,6 +201,9 @@ body {
     }
 
     @media screen and (max-width: 1024px) {
+        &__title{
+            margin-top: 58px;
+        }
         &__period {
             margin-top: 40px;
         }
