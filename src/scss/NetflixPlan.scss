@@ -4,7 +4,6 @@
 body {
     background-color: #ECF3FB;
     overflow-x: hidden;
-    // position: inherit;
 }
 
 
@@ -13,8 +12,6 @@ body {
     padding: 0 120px;
     margin: 58px auto 0 auto;
     width: 100%;
-    // flex-direction: column;
-    // justify-content: center;
     &__title {
         transition: all 0.3s ease;
         margin-top: 80px;
@@ -49,8 +46,6 @@ body {
         justify-content: center;
         width: 100%;
         display: flex;
-        // padding: 17px 48px;
-        // border-radius: 10px 0px 0px 10px;
         font-family: $font-family;
         @include adaptive-font(18,17);
         color: #030303;
@@ -73,7 +68,6 @@ body {
     }
     &-period__right {
         user-select: none;
-        // border-radius: 0px 10px 10px 0px;
         cursor: pointer;
         background: linear-gradient(to left, transparent 50%, #1749B3 50%);
         background-size: 200% 100%;
@@ -133,8 +127,6 @@ body {
         margin-bottom: 32px;
     }
 
-    &-plan__options {}
-
     &-plan__option {
         display: flex;
         align-items: center;
@@ -159,7 +151,7 @@ body {
         display: flex;
         gap: 12px;
         color: #5C5C5C;
-        font-size: 16px;
+        @include adaptive-font(16, 15);
         height: auto;
         width: auto;
         font-family: $font-family;
@@ -168,7 +160,7 @@ body {
     }
 
     &-plan__price {
-        margin-top: 60px;
+        margin-top: 64px;
         display: flex;
         align-items: flex-end;
         justify-content: center;
@@ -176,13 +168,13 @@ body {
 
     .dollar-sign {
         font-family: $font-family3;
-        font-size: 26px;
+        @include adaptive-font(26,16);
         margin-bottom: 20px;
     }
 
     .amout {
         font-family: $font-family3;
-        font-size: 50px;
+        @include adaptive-font(50,30);
         line-height: 130%;
         margin-left: 4px;
     }
@@ -242,6 +234,9 @@ body {
         &__plan{
             padding: 32px 15px ;
         }
+        &-plan__price{
+            margin-top: 32px;
+        }
         &-plan__get-started{
             &:hover{
                 scale: 0.9;
@@ -251,9 +246,7 @@ body {
             margin-left: 32px;
         }
     }
-    @media screen and (max-width:834px){
-        
-    }
+
     @media screen and (max-width: 767px) {
         padding: 0 32px;
         padding-bottom: 11px;
@@ -262,6 +255,9 @@ body {
     @media screen and (max-width: 638px) {
         &__plans {
             flex-wrap: wrap;
+        }
+        &-plan__price{
+            margin-top: 40px;
         }
     }
 
