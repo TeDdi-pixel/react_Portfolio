@@ -1,0 +1,24 @@
+@import './fonts';
+@import './variable';
+
+.support-btn{
+  display: block;
+  width: 243px;
+  padding: 16px 24px;
+  color: white;
+  font-size: 17px;
+  border-radius: 16px;
+  background: var(--black-1, #333);
+  margin: 44px auto 0 auto;
+  text-align: center;
+  border: 1px solid #333;
+  transition: all 0.3s ease;
+  font-family: $font-family2;
+  font-size: 17px;
+  &:hover{
+    color: #333;
+    background-color: transparent;
+    scale: 1.1;
+
+  }
+}

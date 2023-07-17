@@ -5,19 +5,14 @@
 
 
 .header {
-    height: auto;
     width: 100%;
     background-color: white;
-
     position: fixed;
     top: 0;
     left: 0;
-    height: 58px;
-    // overflow: hidden;
-    box-shadow: 0px 12px 28px 0px rgba(177, 177, 177, 0.20);
+    height: 56px;
+    box-shadow: 0 12px 28px 0 rgba(177, 177, 177, 0.20);
     z-index: 200;
-
-
     &__wrapper {
         padding: 0 120px;
         margin: 0 auto;
@@ -28,7 +23,6 @@
         justify-content: space-between;
         align-items: center;
         flex-wrap: wrap;
-        margin-top: 2px;
         padding-bottom: 3px;
     }
 
@@ -62,9 +56,13 @@
         line-height: 150%;
 
         a {
+            transition: color 0.3s ease;
             color: #000;
             display: flex;
             align-items: center;
+            &:hover{
+                color: #1749B3;
+            }
         }
 
         
@@ -97,7 +95,7 @@
         width: 205px;
         padding: 27px 24px 24px 23px;
         border-radius: 16px;
-        box-shadow: 0px 20px 48px 0px rgba(177, 177, 177, 0.40);
+        box-shadow: 0 20px 48px 0 rgba(177, 177, 177, 0.40);
         background-color: #fff;
         transition: all 0.3s ease;
         opacity: 0;
@@ -109,7 +107,7 @@
         &_active {
             opacity: 1;
             z-index: 20;
-            top: 46px;
+            top: 55px;
         }
     }
     &-dropdown__link{
@@ -133,7 +131,7 @@
         width: 114px;
         padding: 27px 24px 24px 23px;
         border-radius: 16px;
-        box-shadow: 0px 20px 48px 0px rgba(177, 177, 177, 0.40);
+        box-shadow: 0 20px 48px 0 rgba(177, 177, 177, 0.40);
         background-color: #fff;
         transition: all 0.3s ease;
         opacity: 0;
@@ -164,8 +162,23 @@
     }
 
     &__messenger {
+        transition: scale 0.3s ease;
+
         &:nth-child(2) {
             margin-left: 12px;
+        }
+        &:hover{
+            scale: 1.2;
+        }
+        path{
+            transition: fill 0.3s ease;
+
+        }
+        svg:hover{
+            path{
+                fill: #1749B3;
+
+            }
         }
     }
 
@@ -173,14 +186,19 @@
         font-family: $font-family;
         font-size: 16px;
         line-height: 150%;
+        margin-left: 4px;
 
         a {
+            transition: color 0.3s ease;
             color: #000;
             display: flex;
             align-items: center;
         }
 
-        margin-left: 4px;
+        a:hover{
+            color: #1749B3;
+
+        }
     }
 
     &__support {
@@ -224,7 +242,7 @@
     @media screen and (max-width:1234px) {
         &__wrapper {
             padding: 0 50px;
-            padding-bottom: 11px;
+            //padding-bottom: 11px;
         }
         // &__dropdown{
         //     // margin-top: 244px;
@@ -371,6 +389,7 @@
                 z-index: 10;
                 top: 0px;
                 height: 100vh;
+                margin-top: 10px;
             }
 
             &__nav {

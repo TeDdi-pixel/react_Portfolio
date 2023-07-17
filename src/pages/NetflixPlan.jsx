@@ -2,8 +2,10 @@ import { useContext, useRef, useState } from 'react';
 import { DataContext } from '../App';
 import Header from '../components/Header/Header';
 import { Link } from 'react-router-dom';
-import InviteBlock from '../components/UI/InviteBlock/InviteBlock';
+import InviteBlock from '../components/InviteBlock/InviteBlock';
 import Footer from '../components/Footer/Footer';
+import ToggleAnswers from "../components/ToggleAnswers/ToggleAnswers";
+import SupportBtn from "../components/UI/Buttons/SupportBtn";
 
 
 function NetflixPlan() {
@@ -123,15 +125,11 @@ function NetflixPlan() {
                     {plans}
                 </div>
                 <InviteBlock />
-                {/* <button className='support-btn' 
-                style={{
-                    width: '195px',
-                    margin: '0 auto',
-                    marginTop: '40px',
-                    background: '#333',
-                }}
-                >Support</button> */}
-            </main> 
+
+                <ToggleAnswers />
+                <SupportBtn/>
+
+            </main>
 
             <Footer />
         </>

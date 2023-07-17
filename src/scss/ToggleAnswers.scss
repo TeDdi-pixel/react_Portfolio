@@ -1,0 +1,79 @@
+@import './fonts';
+@import './variable';
+
+
+.toggle-answers{
+ margin-top: 120px;
+ &__wrapper{
+  margin-top: 16px;
+  padding: 50px 40px 40px 40px;
+  background-color: white;
+  border-radius: 32px;
+  box-shadow: 0px 12px 28px 0px rgba(244, 245, 245, 0.20), 0px 4px 24px 0px rgba(213, 216, 221, 0.20);
+  cursor: pointer;
+ }
+
+ &__title{
+  text-align: center;
+  font-family: $font-family2;
+  margin-bottom: 40px;
+  @include adaptive-font(32, 25)
+ }
+ &__question{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @include adaptive-font(18, 17);
+
+ }
+ &-question__text{
+  font-family: $font-family2;
+  @include  adaptive-font(18,17);
+
+ }
+ &__arrow{
+  transform: rotate(0);
+  transition: transform 0.3s ease;
+  margin-left: 21px;
+  border-radius: 12px;
+  background: rgba(23, 23, 23, 0.05);
+  padding: 10px;
+  width: 40px;
+  height: 40px;
+  &_active{
+   transform: rotate(180deg);
+  }
+ }
+ &__answer{
+  transition: all 0.3s ease;
+  display: grid;
+  grid-template-rows: 0fr;
+  overflow: hidden;
+  @include adaptive-font(18, 17);
+
+  &_active{
+   padding-top: 19px;
+   opacity: 1;
+   grid-template-rows: 1fr;
+  }
+ }
+ &__support-btn{
+  width: 243px;
+  padding: 16px 24px;
+  border-radius: 16px;
+  background: var(--black-1, #333);
+  margin: 0 auto;
+ }
+ @media screen and (max-width: 1023px) {
+     margin-top: 100px;
+  &__wrapper{
+   margin-top: 32px;
+  }
+ }
+ @media screen and (max-width: 374px) {
+  &__wrapper{
+   margin-top: 28px;
+  }
+ }
+}

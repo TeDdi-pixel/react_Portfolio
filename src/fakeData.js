@@ -58,6 +58,38 @@ export const data = {
       },
 
     ],
+  FAQ : [
+    {
+      id : 0,
+      question : 'The set time has passed, but the invoice has not yet arrived, what ' +
+        'should I do?',
+      answer : 'Payment options we currently have: PayPal, Bitcoin.',
+    },
+    {
+      id : 1,
+      question : 'Can I change my Netflix account email and password after purchase?',
+      answer : 'Payment options we currently have: PayPal, Bitcoin.',
+
+    },
+    {
+      id : 2,
+      question : 'Can I add a phone number for password recovery?',
+      answer : 'Payment options we currently have: PayPal, Bitcoin.',
+
+    },
+    {
+      id : 3,
+      question : 'How soon will I receive the account information I ordered?',
+      answer : 'Payment options we currently have: PayPal, Bitcoin.',
+
+    },
+    {
+      id : 4,
+      question : 'How to pay?',
+      answer : 'Payment options we currently have: PayPal, Bitcoin.',
+
+    },
+  ]
     
   };
   
