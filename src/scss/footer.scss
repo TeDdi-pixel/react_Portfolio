@@ -35,7 +35,6 @@
                 font-size: 16px;
             }
         }
-
     }
 
     &__logo {
@@ -66,16 +65,40 @@
 
         a {
             color: white;
+            position: relative;
+
+            &::after {
+                content: "";
+                transition: width 0.3s ease, transform-origin 0.3s ease;
+                position: absolute;
+                width: 0%;
+                height: 2px;
+                background-color: white;
+                bottom: -4px;
+                left: 50%;
+                transform: translateX(-50%);
+
+            }
+
+            &:hover::after {
+                width: 100%;
+                transform-origin: center;
+            }
         }
 
         margin-bottom: 12px;
         font-size: 16px;
 
     }
-    &__nav{
+
+    &__nav {
         margin-bottom: 40px;
     }
+
     &-nav__link {
+        margin-bottom: 12px;
+        font-size: 16px;
+
         &:first-child {
             font-size: 18px;
             font-family: $font-family;
@@ -86,8 +109,6 @@
             color: white;
         }
 
-        margin-bottom: 12px;
-        font-size: 16px;
 
     }
 
@@ -99,11 +120,20 @@
     }
 
     &__messengers {
-
         display: flex;
 
         li:last-child {
             margin-left: 16px;
+        }
+
+        svg {
+            transition: scale 0.3s ease;
+        }
+
+        li:hover {
+            svg {
+                scale: 1.2;
+            }
         }
     }
 
@@ -135,7 +165,8 @@
             font-family: $font-family;
         }
     }
-    &__line-through{
+
+    &__line-through {
         display: none;
     }
 
@@ -145,9 +176,11 @@
 
     @media screen and (max-width:1023px) {
         margin-top: 100px;
-        &__line-through{
+
+        &__line-through {
             display: block;
         }
+
         &__logo {
             a {
                 display: none;
@@ -178,7 +211,8 @@
             margin-bottom: 40px;
             align-items: flex-start;
         }
-        &__nav{
+
+        &__nav {
             margin-bottom: auto;
         }
 
@@ -209,9 +243,9 @@
 
         &__logo {
             margin-bottom: 12px;
-            //width: 100%;
             margin-right: 12px;
             flex-wrap: wrap;
+
             a {
                 margin-top: 10px;
                 margin-left: 0;
@@ -238,12 +272,6 @@
         }
     }
 
-    @media screen and (max-width:492px) {
-        &__logo {
-            // margin-right: 0;
-        }
-    }
-
     @media screen and (max-width:445px) {
         &__info {
             width: 100%;
@@ -252,6 +280,7 @@
                 width: auto;
             }
         }
+
         &__subscriptions {
             margin-top: 40px;
             margin-right: 40px;
