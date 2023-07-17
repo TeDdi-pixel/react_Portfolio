@@ -4,7 +4,7 @@
 .support-btn{
   display: block;
   width: 243px;
-  padding: 16px 24px;
+  padding: 16px;
   color: white;
   font-size: 17px;
   border-radius: 16px;
@@ -15,10 +15,14 @@
   transition: all 0.3s ease;
   font-family: $font-family2;
   font-size: 17px;
+
   &:hover{
     color: #333;
     background-color: transparent;
     scale: 1.1;
 
+  }
+  @media screen and (max-width: 292px) {
+    width: auto;
   }
 }

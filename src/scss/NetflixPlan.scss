@@ -95,7 +95,6 @@ body {
         margin-top: 48px;
         display: flex;
         flex-direction: row;
-        flex-wrap: wrap;
         gap: 16px;
         justify-content: center;
     }
@@ -105,10 +104,12 @@ body {
 
         padding: 60px 40px 40px 40px;
         background-color: #fff;
-        width: 389px;
+        max-width: 389px;
+        width: 100%;
         display: flex;
         justify-content: center;
         flex-direction: column;
+
         text-align: center;
         border-radius: 32px;
         box-shadow: 0px 12px 28px 0px rgba(244, 245, 245, 0.20);
@@ -127,7 +128,7 @@ body {
 
     &-plan__title {
         font-family: $font-family2;
-        font-size: 32px;
+        @include adaptive-font(32,25);
         font-weight: 700;
         margin-bottom: 32px;
     }
@@ -139,17 +140,31 @@ body {
         align-items: center;
         justify-content: left;
         margin-top: 16px;
-
+        flex-wrap: wrap;
         &_first {
             margin-top: 32px;
         }
+        svg{
+            min-height: 24px;
+            min-width: 24px;
+            path{
+                object-fit: cover;
+            }
+        }
+
     }
 
     &-plan-option__text {
-        margin-left: 12px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
         color: #5C5C5C;
         font-size: 16px;
+        height: auto;
+        width: auto;
         font-family: $font-family;
+        text-align: left;
+
     }
 
     &-plan__price {
@@ -175,14 +190,18 @@ body {
     &-plan__get-started {
         width: 100%;
         border-radius: 12px;
-        padding: 16px 82px;
+        padding: 16px 0;
         color: white;
+        @include adaptive-font(18, 15);
         background-color: #333;
         transition: all 0.3s ease;
         margin-top: 16px;
+        border: 1px solid #333;
 
         &:hover {
-            background-color: #1749B3;
+            color: #333;
+            scale: 1.1;
+            background-color: transparent;
         }
     }
 
@@ -194,12 +213,11 @@ body {
         padding-bottom: 11px;
     }
 
-    @media screen and (max-width:1103px) {
-        &__plans {
-            // flex-wrap: wrap;
+    @media screen and (max-width:1082px) {
+        &-plan-option__text{
+            align-items: flex-start;
         }
     }
-
     @media screen and (max-width: 1024px) {
         &__title{
             margin-top: 52px;
@@ -217,8 +235,10 @@ body {
         }
 
         &__plans {
-            flex-wrap: wrap;
             margin-top: 32px;
+        }
+        &__plan{
+            padding: 32px 15px ;
         }
         .right-part{
             margin-left: 32px;
@@ -232,6 +252,12 @@ body {
         padding-bottom: 11px;
 
     }
+    @media screen and (max-width: 638px) {
+        &__plans {
+            flex-wrap: wrap;
+        }
+    }
+
 
     @media screen and (max-width: 374px) {
         padding: 0 24px;
