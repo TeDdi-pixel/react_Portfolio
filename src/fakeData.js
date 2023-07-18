@@ -37,6 +37,7 @@ export const data = {
         planOption3: 'On-demand playback',
         planPrice: '87',
       },
+
       {
         term: '12 months',
         id: 4,
@@ -45,7 +46,7 @@ export const data = {
         planOption2: 'Play anywhere - even offline',
         planOption3: 'On-demand playback',
         planPrice: '97',
-        
+
       },
       {
         term: '12 months',
@@ -58,6 +59,64 @@ export const data = {
       },
 
     ],
+  Spotify: [
+    {
+      term: '6 months',
+      id: 0,
+      planName: 'Individual',
+      planOption1: 'Ad-free music listening',
+      planOption2: 'Play anywhere - even offline',
+      planOption3: 'On-demand playback',
+      planPrice: '47',
+    },
+    {
+      term: '6 months',
+      id: 1,
+      planName: 'Duo',
+      planOption1: '2 Premium accounts for a couple under one roof',
+      planOption2: 'Ad-free music listening, play offline, on-demand playback',
+      planPrice: '57',
+
+    },
+    {
+      term: '6 months',
+      id: 2,
+      planName: 'Family',
+      planOption1: '6 Premium accounts for family members living under one roof',
+      planOption2: 'Block explicit music',
+      planOption3: 'Ad-free music listening, play offline, on-demand playback',
+      planPrice: '77',
+    },
+    {
+      term: '12 months',
+      id: 3,
+      planName: 'Individual',
+      planOption1: 'Ad-free music listening',
+      planOption2: 'Play anywhere - even offline',
+      planOption3: 'On-demand playback',
+      planPrice: '87',
+    },
+
+    {
+      term: '12 months',
+      id: 4,
+      planName: 'Duo',
+      planOption1: '2 Premium accounts for a couple under one roof',
+      planOption2: 'Ad-free music listening, play offline, on-demand playback',
+      planPrice: '97',
+
+    },
+    {
+      term: '12 months',
+      id: 5,
+      planName: 'Family',
+      planOption1: '6 Premium accounts for family members living under one roof',
+      planOption2: 'Block explicit music',
+      planOption3: 'Ad-free music listening, play offline, on-demand playback',
+      planPrice: '107',
+    },
+
+  ],
   FAQ : [
     {
       id : 0,

@@ -65,16 +65,16 @@ function Header() {
                             <li className="header__link"
                                 onClick={handleDropdownClick}
                             >
-                                <Link to="/"
+                                <Link
                                 ref={dropdownRef}
                                 >
                                     Subscriptions
                                     <img src="./img/arrow-down-s-line (2) 2.svg" alt="" className={subscriptionsActive ? 'header__arrow header__arrow_active': 'header__arrow'}/>
                                     <ul className={subscriptionsActive ? 'header__dropdown header__dropdown_active': 'header__dropdown'}
                                     >
-                                            <li className='header-dropdown__link'><Link>Netflix</Link></li>
-                                            <li className='header-dropdown__link'><Link>YouTube Premium</Link></li>
-                                            <li className='header-dropdown__link'><Link>Spotify</Link></li>
+                                            <li className='header-dropdown__link'><Link to='/'>Netflix</Link></li>
+                                            <li className='header-dropdown__link'><Link to='/'>YouTube Premium</Link></li>
+                                            <li className='header-dropdown__link'><Link to='/spotify'>Spotify</Link></li>
                                     </ul>
                                 </Link>
                             </li>
@@ -112,7 +112,7 @@ function Header() {
                                 </Link>
                             </li>
                             <li className='header__messenger'>
-                                <Link to='/'>
+                                <a href='https://t.me/whyME_3'>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" >
                                         <g clip-path="url(#clip0_10951_150)">
                                             <path d="M12 22C6.477 22 2 17.523 2 12C2 6.477 6.477 2 12 2C17.523 2 22 6.477 22 12C22 17.523 17.523 22 12 22ZM8.89 13.17L8.903 13.163L9.773 16.033C9.885 16.344 10.039 16.4 10.226 16.374C10.414 16.349 10.513 16.248 10.636 16.13L11.824 14.982L14.374 16.87C14.84 17.127 15.175 16.994 15.291 16.438L16.948 8.616C17.131 7.888 16.811 7.596 16.246 7.828L6.513 11.588C5.849 11.854 5.853 12.226 6.393 12.391L8.89 13.171V13.17Z" fill="#333333" />
@@ -123,7 +123,7 @@ function Header() {
                                             </clipPath>
                                         </defs>
                                     </svg>
-                                </Link>
+                                </a>
                             </li>
                         </ul>
                         <ul className='header__languages'>
@@ -248,7 +248,7 @@ function Header() {
                                 </Link>
                             </li>
                             <li className='header-menu__sub'>
-                                <Link to='/'
+                                <Link to='/spotify'
                                     onClick={handleBurgerClick}
                                 >
                                     Spotify

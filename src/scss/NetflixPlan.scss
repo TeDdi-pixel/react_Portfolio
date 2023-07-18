@@ -91,6 +91,7 @@ body {
         flex-direction: row;
         gap: 16px;
         justify-content: center;
+
     }
 
     &__plan {
@@ -101,24 +102,33 @@ body {
         max-width: 389px;
         width: 100%;
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
         flex-direction: column;
 
         text-align: center;
         border-radius: 32px;
         box-shadow: 0px 12px 28px 0px rgba(244, 245, 245, 0.20);
-
+        &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            height: 1px;
+            width: 100%;
+            left: 0px;
+            top: 113px;
+            background-color: #DBDBDB;
+        }
     }
 
-    &-plan__line-through::before {
-        content: "";
-        display: block;
-        position: absolute;
-        height: 1px;
-        width: 100%;
-        left: 0px;
-        background-color: #DBDBDB;
-    }
+    //&-plan__line-through::before {
+    //    content: "";
+    //    display: block;
+    //    position: absolute;
+    //    height: 1px;
+    //    width: 100%;
+    //    left: 0px;
+    //    background-color: #DBDBDB;
+    //}
 
     &-plan__title {
         font-family: $font-family2;
@@ -135,6 +145,7 @@ body {
         flex-wrap: wrap;
         &_first {
             margin-top: 32px;
+
         }
         svg{
             min-height: 24px;
@@ -233,6 +244,9 @@ body {
         }
         &__plan{
             padding: 32px 15px ;
+            &::after{
+                top: 78px;
+            }
         }
         &-plan__price{
             margin-top: 32px;
