@@ -6,6 +6,7 @@ import InviteBlock from '../components/InviteBlock/InviteBlock';
 import Footer from '../components/Footer/Footer';
 import ToggleAnswers from "../components/ToggleAnswers/ToggleAnswers";
 import SupportBtn from "../components/UI/Buttons/SupportBtn";
+import RegForm from "../components/RegForm/RegForm";
 
 
 function NetflixPlan() {
@@ -105,7 +106,7 @@ function NetflixPlan() {
     return (
         <>
             <Header />
-
+            <RegForm/>
             <main className='main'>
                 <h1 className='main__title'>Choose a Netflix Plan</h1>
                 <p className='main__description'>Listen without limits at a bargain price</p>

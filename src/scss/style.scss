@@ -6,7 +6,8 @@
 @import './footer.scss';
 @import "./ToggleAnswers.scss";
 @import "./SupportBtn.scss";
-@import "./Spotify";
+@import "./Spotify.scss";
+@import "./RegForm.scss";
 
 // #container{
 //     background-color: rgb(255, 200, 128);
@@ -23,6 +24,7 @@
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
+    position: relative;
 }
 
 
