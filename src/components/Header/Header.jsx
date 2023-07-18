@@ -5,6 +5,7 @@ function Header() {
     const [active, setActive] = useState(false);
     const [subscriptionsActive, setSubscriptionsActive] = useState(false);
     const [languageActive, setLanguageActive] = useState(false);
+    const [blur, setBlure] = useState(false);
 
     const dropdownRef = useRef();
     const languageRef = useRef();
@@ -27,6 +28,10 @@ function Header() {
     }
     const handleLanguageClick = () => {
         setLanguageActive((prev) => !prev);
+    }
+    const regOpen = () => {
+        setLanguageActive((prev) => !prev);
+        console.log(blur);
     }
 
     const handleDropdownOut = (event) => {
@@ -51,6 +56,9 @@ function Header() {
         document.body.style.top = '';
         window.scrollTo(0, -scrollPosition);
     };
+
+
+
     return (
         <>
             <header className={active ? 'header header_active' : 'header'}
@@ -143,8 +151,10 @@ function Header() {
                                 </Link>
                             </li>
                         </ul>
-                        <div className='header__support'>
-                        <Link to="/" className='header__support-btn'>Support</Link>
+                        <div className='header__login'>
+                        <Link to="/" className='header__login-btn'
+                        onClick={regOpen}
+                        >Login</Link>
 
                         </div>
                     </div>
