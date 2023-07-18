@@ -1,15 +1,37 @@
 import { Link } from 'react-router-dom';
 import { useState, useEffect, useRef } from 'react';
+// import { removeBlur } from '../RegForm/RegForm';
 
 function Header() {
+    
     const [active, setActive] = useState(false);
     const [subscriptionsActive, setSubscriptionsActive] = useState(false);
     const [languageActive, setLanguageActive] = useState(false);
-    const [blur, setBlure] = useState(false);
+    const [blur, setBlur] = useState(false);
+    const loginRef = useRef()
+    const headerRef = useRef();
 
     const dropdownRef = useRef();
     const languageRef = useRef();
 
+    const blurAll = () => {
+        setBlur((prev) => !prev);
+            
+        // if(blur){
+        //     headerRef.current.className += ' header_blur';
+        // }else if(headerRef.current.className === 'header header_blur'){
+        //     headerRef.current.className = 'header';
+        //     setBlur(false);
+        // }
+    }
+    // headerRef.current.className = `${(blur ? 'header header_blur' : 'header')}`;
+    useEffect(() => {
+        if (blur) {
+            headerRef.current.classList.add('header_blur');
+        } else {
+            headerRef.current.classList.remove('header_blur');
+        }
+    }, [blur]);
 
     useEffect(() => {
         if (active) {
@@ -17,7 +39,11 @@ function Header() {
         } else {
             enableScroll();
         }
-    }, [active]);
+        loginRef.current.addEventListener('click',blurAll);
+        return () => {
+            document.removeEventListener('mousedown',blurAll);
+        }
+    }, [active, dropdownRef, languageRef]);
     
     const handleBurgerClick = () => {
         setActive((prev) => !prev);
@@ -31,7 +57,6 @@ function Header() {
     }
     const regOpen = () => {
         setLanguageActive((prev) => !prev);
-        console.log(blur);
     }
 
     const handleDropdownOut = (event) => {
@@ -61,7 +86,8 @@ function Header() {
 
     return (
         <>
-            <header className={active ? 'header header_active' : 'header'}
+            <header className={(active ? 'header header_active' : 'header')}
+                ref={headerRef}
             >
                 <div className="header__wrapper">
                     <ul className="header__logo-block">
@@ -151,7 +177,9 @@ function Header() {
                                 </Link>
                             </li>
                         </ul>
-                        <div className='header__login'>
+                        <div className='header__login'
+                        ref={loginRef}
+                        >
                         <Link to="/" className='header__login-btn'
                         onClick={regOpen}
                         >Login</Link>

@@ -3,7 +3,8 @@ import {data} from './fakeData';
 import NetflixPlan from './pages/NetflixPlan';
 import { BrowserRouter } from 'react-router-dom';
 import { createContext, useContext, useState } from 'react';
-import AppRouter from "./components/AppRouter/AppRouter";
+import AppRouter from './Router/AppRouter/AppRouter';
+
 const DataContext = createContext();
 
 function App() {

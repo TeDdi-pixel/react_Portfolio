@@ -1,22 +1,190 @@
-@import './fonts';
-@import './variable';
+@import './fonts.scss';
+@import './variable.scss';
+@import './mixins';
 
 .reg-form{
   width: 540px;
   border-radius: 32px;
   box-shadow: 0px 4px 24px 0px rgba(213, 216, 221, 0.20);
   position: fixed;
-  height: 853px;
+  height: auto;
   background-color: white;
   z-index: 1000;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-
+  padding: 60px 40px 40px 40px;
   &_active{
     z-index: -1000;
   }
+  
+  &__wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  &__title{
+    font-family: $font-family;
+    text-align: left;
+    @include  adaptive-font(26,25);
+  }
+  &__description{
+    font-size: 16px;
+    font-family: $font-family;
+    margin-top: 12px;
+    a{
+      color: #1749B3;
+      &:hover{
+        text-decoration: underline;
+      }
+    }
+  }
+  &__label{
+    @include adaptive-font(17, 14);
+    font-family: $font-family;
+    margin-top: 32px;
+    &_first{
+      margin-top: 40px;
+    }
+  }
   &__input{
+    font-family: $font-family;
+    @include adaptive-font(17,15);
+    padding: 16px 24px;
+    border-radius: 12px;
+    background-color: #F1F4F8;
+    transition: background-color 0.3s ease;
+    color: var(--3, #9C99AD);
+    line-height: 130%;
+    margin-top: 12px;
+    width: 100%;
+    &:focus{
+      background-color: #e7eaee;
+    }
+  }
+  &__check-wrapper{
+    display: flex;
+    margin-top: 32px;
+    align-items: flex-start;
+  }
+  &__checkbox{
+    margin-right: 8px;
+    width: 20px;
+    height: 20px;
+  }
+  &__agreements{
+    font-size: 15px;
+    font-family: $font-family;
+    line-height: 130%;
+  }
+  &__privacy{
+    color: #1749B3;
+    &:hover{
+      text-decoration: underline;
+    }
 
+  }
+  &__terms{
+    color: #1749B3;
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+  &__sign-up{
+    width: 100%;
+    border-radius: 12px;
+    background-color: #1749B3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px 0 16px 0;
+    @include adaptive-font(18, 15);
+    border: 1px solid #1749B3;
+    color: white;
+    font-family: $font-family2;
+    margin-top: 40px;
+    transition: border-color 0.3s ease, background-color 0.3s ease, scale 0.3s ease, color 0.3s ease;
+    &:hover{
+      background-color: transparent;
+      border-color: #333;
+      scale: 0.9;
+      color: #333;
+    }
+  }
+  &__or-sign-in-with{
+    margin-top: 40px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    p{
+      font-size: 16px;
+      font-family: $font-family;
+      color: #909090;
+      white-space: nowrap;
+      margin: 0 6px;
+    }
+
+  }
+  &__left-block{
+    position: relative;
+    width: 100%;
+  }
+  &__right-block{
+    position: relative;
+    width: 100%;
+  }
+  &__left-line::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    left: 0;
+    background-color: #DFDFDF;
+
+  }
+  &__right-line::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    left: 0;
+    background-color: #DFDFDF;
+
+  }
+  &__icons{
+    margin-top: 24px;
+    gap: 9px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__icon-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 147px;
+    border-radius: 12px;
+    border: 1px solid #DFDFDF;
+    padding: 19px;
+    transition: scale 0.3s ease;
+    cursor: pointer;
+    img{
+      margin: auto;
+    }
+    &:hover{
+      scale: 1.1;
+    }
+  }
+  &-exit__wrapper{
+    position: absolute;
+    right: 40px;
+    top: 40px;
+    transition: scale 0.3s ease;
+    cursor: pointer;
+    &:hover{
+      scale: 1.2;
+    }
   }
 }

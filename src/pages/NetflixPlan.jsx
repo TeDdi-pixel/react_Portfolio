@@ -107,7 +107,7 @@ function NetflixPlan() {
         <>
             <Header />
             <RegForm/>
-            <main className='main'>
+            <main id='main' className='main'>
                 <h1 className='main__title'>Choose a Netflix Plan</h1>
                 <p className='main__description'>Listen without limits at a bargain price</p>
                 <div className='main__period'

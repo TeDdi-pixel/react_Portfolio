@@ -33,6 +33,7 @@
 
  }
  &__arrow{
+    user-select: none;
   transform: rotate(0);
   transition: transform 0.3s ease;
   margin-left: 21px;

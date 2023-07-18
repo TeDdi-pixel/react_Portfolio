@@ -13,6 +13,9 @@
     height: 56px;
     box-shadow: 0 12px 28px 0 rgba(177, 177, 177, 0.20);
     z-index: 200;
+    &_blur{
+        filter: blur(7.5px);
+    }
     &__wrapper {
         padding: 0 120px;
         margin: 0 auto;
