@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 
 
-function RegForm() {
+function RegForm(props) {
     const inputRefEmail = useRef();
     const inputRefName = useRef();
     const inputRefPassword = useRef();
@@ -27,28 +27,19 @@ function RegForm() {
         if (!inputRefPassword.current.contains(event.target)) {
             setPlaceholderPassword('Enter your password');
         }
+
     };
-
-    const removeBlur = () => {
-        const header = document.querySelector('header header_blure');
-        header.className = 'header';
-    }
+    console.log(props.setIsBlurred);
+    // console.log(props.isBlurred);
 
 
-    useEffect(() => {
-        document.addEventListener('mousedown', handlePlaceholderEmail);
-        document.addEventListener('mousedown', handlePlaceholderPassword);
-        document.addEventListener('mousedown', handlePlaceholderName);
-        return () => {
-            document.removeEventListener('mousedown', handlePlaceholderEmail);
-            document.removeEventListener('mousedown', handlePlaceholderName);
-            document.removeEventListener('mousedown', handlePlaceholderPassword);
-        };
-    }, []);
-
+    // const removeBlur = () => {
+    //     setIsBlurred(false);
+    // }
+    // console.log(props.)
 
     return (
-        <div className="reg-form">
+        <div className={`reg-form ${props.isBlurred ? 'reg-form_active reg-form_blurred' : ''}`}>
             <div className='reg-form__wrapper'>
                 <h2 className="reg-form__title">Create an account</h2>
                 <h3 className="reg-form__description">
@@ -56,18 +47,21 @@ function RegForm() {
                 </h3>
                 <label className='reg-form__label reg-form__label_first' htmlFor="userName">User name</label>
                 <input id="userName" type="text" className="reg-form__input"
-                    ref={inputRefName}
-                    placeholder={placeholderName}
+                        ref={inputRefName}
+                        placeholder={placeholderName}
+                        onClick={handlePlaceholderName}
                 />
                 <label className='reg-form__label' htmlFor="email">Email Address</label>
                 <input id="email" type="email" className="reg-form__input"
-                    ref={inputRefEmail}
-                    placeholder={placeholderEmail}
+                        ref={inputRefEmail}
+                        placeholder={placeholderEmail}
+                        onClick={handlePlaceholderEmail}
                 />
                 <label className='reg-form__label' htmlFor="password">Password</label>
                 <input id="password" type="password" className="reg-form__input"
-                    ref={inputRefPassword}
-                    placeholder={placeholderPassword}
+                        ref={inputRefPassword}
+                        placeholder={placeholderPassword}
+                        onClick={handlePlaceholderPassword}
                 />
                 <div className='reg-form__check-wrapper'>
                     <input id="checkbox" type="checkbox" className="reg-form__checkbox" />
@@ -98,7 +92,7 @@ function RegForm() {
                         <img src="./img/image 12.jpg" alt="" />
                     </Link>
                     <div className='reg-form-exit__wrapper'
-                    onClick={removeBlur}
+                         onClick={props.setIsBlurred}
                     >
                         <img src="./img/Group 3677629 (1).jpg" alt="" className='reg-form__exit'/>
                     </div>

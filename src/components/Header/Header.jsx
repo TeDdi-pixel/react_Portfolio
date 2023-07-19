@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { useState, useEffect, useRef } from 'react';
 // import { removeBlur } from '../RegForm/RegForm';
 
-function Header() {
+function Header(props) {
     
     const [active, setActive] = useState(false);
     const [subscriptionsActive, setSubscriptionsActive] = useState(false);
@@ -65,6 +65,10 @@ function Header() {
             setSubscriptionsActive(false);
         }
     }
+
+    const handleLoginClick = () => {
+        setIsBlurred(true);
+    };
     document.addEventListener('click',handleDropdownOut)
 
     const disableScroll = () => {
@@ -82,7 +86,7 @@ function Header() {
         window.scrollTo(0, -scrollPosition);
     };
 
-
+    console.log(props.onLoginClick);
 
     return (
         <>
@@ -179,6 +183,7 @@ function Header() {
                         </ul>
                         <div className='header__login'
                         ref={loginRef}
+                             onClick={props.onLoginClick}
                         >
                         <Link to="/" className='header__login-btn'
                         onClick={regOpen}
