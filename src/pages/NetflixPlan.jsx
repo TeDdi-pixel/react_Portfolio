@@ -36,13 +36,13 @@ function NetflixPlan() {
         }
 
     };
-
-    const handleBlur = () => {
-        setIsBlurred((prev) => !prev);
-    }
-    const handleLoginClick = () => {
-        setIsBlurred(true);
-    };
+    //
+    // const handleBlur = () => {
+    //     setIsBlurred((prev) => !prev);
+    // }
+    // const handleLoginClick = () => {
+    //     setIsBlurred(true);
+    // };
 
 
 
@@ -124,10 +124,10 @@ function NetflixPlan() {
 
     return (
         <>
-            <RegForm isBlurred={isBlurred} setIsBlurred={handleBlur}/>
+            <RegForm />
             {isBlurred ? (
                 <>
-                    <Header onLoginClick={handleLoginClick}/>
+                    <Header />
                     <main id='main' className='main'>
                         <h1 className='main__title'>Choose a Netflix Plan</h1>
                         <p className='main__description'>Listen without limits at a bargain price</p>

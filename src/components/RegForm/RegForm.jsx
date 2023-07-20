@@ -29,7 +29,19 @@ function RegForm(props) {
         }
 
     };
-    console.log(props.setIsBlurred);
+
+    useEffect(() => {
+        document.addEventListener('mousedown', handlePlaceholderName);
+        document.addEventListener('mousedown', handlePlaceholderEmail);
+        document.addEventListener('mousedown', handlePlaceholderPassword);
+        return () =>{
+            document.removeEventListener('mousedown', handlePlaceholderName);
+            document.removeEventListener('mousedown', handlePlaceholderEmail);
+            document.removeEventListener('mousedown', handlePlaceholderPassword);
+    };
+    }, []);
+
+    // console.log(props.setIsBlurred);
     // console.log(props.isBlurred);
 
 
@@ -47,21 +59,18 @@ function RegForm(props) {
                 </h3>
                 <label className='reg-form__label reg-form__label_first' htmlFor="userName">User name</label>
                 <input id="userName" type="text" className="reg-form__input"
-                        ref={inputRefName}
-                        placeholder={placeholderName}
-                        onClick={handlePlaceholderName}
+                       ref={inputRefName}
+                       placeholder={placeholderName}
                 />
                 <label className='reg-form__label' htmlFor="email">Email Address</label>
                 <input id="email" type="email" className="reg-form__input"
-                        ref={inputRefEmail}
-                        placeholder={placeholderEmail}
-                        onClick={handlePlaceholderEmail}
+                       ref={inputRefEmail}
+                       placeholder={placeholderEmail}
                 />
                 <label className='reg-form__label' htmlFor="password">Password</label>
                 <input id="password" type="password" className="reg-form__input"
-                        ref={inputRefPassword}
-                        placeholder={placeholderPassword}
-                        onClick={handlePlaceholderPassword}
+                       ref={inputRefPassword}
+                       placeholder={placeholderPassword}
                 />
                 <div className='reg-form__check-wrapper'>
                     <input id="checkbox" type="checkbox" className="reg-form__checkbox" />

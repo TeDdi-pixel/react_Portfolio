@@ -1,47 +1,21 @@
 import { Link } from 'react-router-dom';
 import { useState, useEffect, useRef } from 'react';
-// import { removeBlur } from '../RegForm/RegForm';
 
-function Header(props) {
+function Header() {
     
     const [active, setActive] = useState(false);
     const [subscriptionsActive, setSubscriptionsActive] = useState(false);
     const [languageActive, setLanguageActive] = useState(false);
-    const [blur, setBlur] = useState(false);
-    const loginRef = useRef()
-    const headerRef = useRef();
 
     const dropdownRef = useRef();
     const languageRef = useRef();
 
-    const blurAll = () => {
-        setBlur((prev) => !prev);
-            
-        // if(blur){
-        //     headerRef.current.className += ' header_blur';
-        // }else if(headerRef.current.className === 'header header_blur'){
-        //     headerRef.current.className = 'header';
-        //     setBlur(false);
-        // }
-    }
-    // headerRef.current.className = `${(blur ? 'header header_blur' : 'header')}`;
-    useEffect(() => {
-        if (blur) {
-            headerRef.current.classList.add('header_blur');
-        } else {
-            headerRef.current.classList.remove('header_blur');
-        }
-    }, [blur]);
 
     useEffect(() => {
         if (active) {
             disableScroll();
         } else {
             enableScroll();
-        }
-        loginRef.current.addEventListener('click',blurAll);
-        return () => {
-            document.removeEventListener('mousedown',blurAll);
         }
     }, [active, dropdownRef, languageRef]);
     
@@ -66,9 +40,9 @@ function Header(props) {
         }
     }
 
-    const handleLoginClick = () => {
-        setIsBlurred(true);
-    };
+    // const handleLoginClick = () => {
+    //     setIsBlurred(true);
+    // };
     document.addEventListener('click',handleDropdownOut)
 
     const disableScroll = () => {
@@ -86,12 +60,11 @@ function Header(props) {
         window.scrollTo(0, -scrollPosition);
     };
 
-    console.log(props.onLoginClick);
+    // console.log(props.onLoginClick);
 
     return (
         <>
             <header className={(active ? 'header header_active' : 'header')}
-                ref={headerRef}
             >
                 <div className="header__wrapper">
                     <ul className="header__logo-block">
@@ -104,7 +77,6 @@ function Header(props) {
                                 onClick={handleDropdownClick}
                             >
                                 <Link
-                                ref={dropdownRef}
                                 >
                                     Subscriptions
                                     <img src="./img/arrow-down-s-line (2) 2.svg" alt="" className={subscriptionsActive ? 'header__arrow header__arrow_active': 'header__arrow'}/>
@@ -182,8 +154,7 @@ function Header(props) {
                             </li>
                         </ul>
                         <div className='header__login'
-                        ref={loginRef}
-                             onClick={props.onLoginClick}
+                              // onClick={props.onLoginClick}
                         >
                         <Link to="/" className='header__login-btn'
                         onClick={regOpen}
@@ -322,7 +293,7 @@ function Header(props) {
                                 </Link>
                             </li>
                             <li className='header-menu__messenger'>
-                                <Link to='/' 
+                                <Link to='/'
                                     onClick={handleBurgerClick}
                                 >
                                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
