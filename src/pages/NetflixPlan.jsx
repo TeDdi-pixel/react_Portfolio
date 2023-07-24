@@ -124,7 +124,7 @@ function NetflixPlan() {
 
     return (
         <>
-            <RegForm />
+            {/*<RegForm />*/}
             {isBlurred ? (
                 <>
                     <Header />
